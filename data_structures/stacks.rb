@@ -1,45 +1,48 @@
+# typed: true
+# frozen_string_literal: true
+
 # Stacks are LIFO
 # Functions: push, pop, peek, length,
 
 module DataStructures
   class Stacks
     def initialize
-      @_collection = []
-      @_count = 0
+      @items = []
+      @total_items = 0
     end
 
     def push(item)
-      @_collection << item
+      @items << item
       increment!
     end
 
     def pop
-      last_item = @_collection[-1]
+      last_item = @items[-1]
 
       return if last_item.nil?
 
-      @_collection = @_collection[0...-1]
+      @items = @items[0...-1]
       decrement!
 
       last_item
     end
 
     def peek
-      @_collection[-1]
+      @items[-1]
     end
 
     def length
-      @_count
+      @total_items
     end
 
     private
 
     def increment!
-      @_count += 1
+      @total_items += 1
     end
 
     def decrement!
-      @_count -= 1
+      @total_items -= 1
     end
   end
 end

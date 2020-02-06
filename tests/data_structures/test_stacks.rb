@@ -1,5 +1,5 @@
-require "minitest/autorun"
-require "./data_structures"
+# typed: false
+require './tests/minitest_helper'
 
 class TestStacks < Minitest::Test
   def setup
@@ -31,7 +31,7 @@ class TestStacks < Minitest::Test
 
   def test_pop_when_empty
     assert_nil @stack.pop
-    assert @stack.pop == 0
+    assert @stack.pop == nil
   end
 
   def test_peek
