@@ -68,10 +68,11 @@ class LinkedList(object):
         if current:
             if not current.next:
                 self.head = None
-                return current
             else:
                 self.head = current.next
-                return self.head
+
+            current.next = None
+            return current
 
         return None
 
