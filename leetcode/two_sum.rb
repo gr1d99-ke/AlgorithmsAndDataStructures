@@ -2,7 +2,7 @@ module Leetcode
   module TwoSum
     LINK = 'https://leetcode.com/problems/two-sum/'
 
-    solution = Module.new do
+    array_solution = Module.new do
       def call(nums, target)
         index = 0
         result = nil
@@ -29,6 +29,46 @@ module Leetcode
       end
     end
 
-    extend(solution)
+    hash_solution = Module.new do
+      def call(nums, target)
+        index_num_hash = {}
+        result = nil
+
+        index = 0
+        for num in nums
+          index_num_hash[num] = index
+          index += 1
+        end
+
+        index = 0
+        for num in nums
+          complement = target - num
+
+          if index_num_hash.has_key?(complement) && index_num_hash[complement] != index
+            result = [index_num_hash[complement], index]
+          end
+
+          index += 1
+        end
+
+        result
+      end
+    end
+
+    #extend(array_solution)
+    extend(hash_solution)
   end
 end
+
+a = [1, 2, 3, 4]
+
+for n in a
+  1
+  for inner_n in a[i + 1..-1]
+    n +
+  end
+end
+
+1, [2, 3, 4]
+2, [3, 4]
+3, [4]
