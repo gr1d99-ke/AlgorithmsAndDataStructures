@@ -9,7 +9,7 @@ module Anagrams
       str1_hash = {}
       str2_hash = {}
 
-      (0...str1.length).each do |i|
+      (0...str1.length).each do |i| # n iterations
         key = str1[i]
         if str1_hash.key?(key)
           str1_hash[key] += 1
@@ -18,16 +18,18 @@ module Anagrams
         end
       end
 
-      (0...str2.length).each do |i|
+      (0...str2.length).each do |i| # n iterations
         key = str2[i]
-        if str2_hash.key?(key)
-          str2_hash[key] += 1
+        if str2_hash.key?(key) # O(1)
+          str2_hash[key] += 1 # constant
         else
-          str2_hash[key] = 1
+          str2_hash[key] = 1 # constant
         end
       end
 
-      str1_hash == str2_hash
+      str1_hash == str2_hash # constant
+
+      # O(N) -> O(N + N) -> O(N)
     end
   end
 end

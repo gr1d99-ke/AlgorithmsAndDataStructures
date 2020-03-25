@@ -22,10 +22,10 @@ module Anagrams
         end
       end
 
-      str1_hash.values.all? { |v| v.zero? }
+      str1_hash.values.all? { |v| v.zero? } # n iterations
 
       # complexity
-      # O(N) -> O(N + N) -> O(2N) -> O(N)
+      # O(N) -> O(N + N + N) -> O(3N) -> O(N)
     end
   end
 end

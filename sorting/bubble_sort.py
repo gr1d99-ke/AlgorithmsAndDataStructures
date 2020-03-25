@@ -12,4 +12,4 @@ def bubble_sort(array):
     return array
 
 
-print(bubble_sort([8, 1, 0, 6, 4]))
+print(bubble_sort(list("qwerty")))
